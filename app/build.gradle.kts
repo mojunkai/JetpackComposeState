@@ -51,9 +51,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+//    implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -63,8 +64,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     // 3. Material Icons 依赖（与 BOM 版本一致，无需写死版本号）
-    implementation(libs.androidx.compose.material.icons.core)    // 核心图标库
-    implementation(libs.androidx.compose.material.icons.extended) // 扩展图标库
+    implementation(libs.androidx.compose.material3.icons.core)    // 核心图标库
+    implementation(libs.androidx.compose.material3.icons.extended) // 扩展图标库
 
     implementation("androidx.compose.runtime:runtime-livedata:1.9.1")
+
 }
