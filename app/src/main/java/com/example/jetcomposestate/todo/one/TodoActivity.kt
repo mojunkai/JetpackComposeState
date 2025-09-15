@@ -1,6 +1,7 @@
 package com.example.jetcomposestate.todo.one
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -19,7 +20,11 @@ class TodoActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetComposeStateTheme {
-                TodoActivityScreen()
+//                TodoActivityScreen()
+                TodoItemInput{item ->
+                    Log.d("TodoActivity", "onCreate: $item")
+
+                }
             }
         }
     }
