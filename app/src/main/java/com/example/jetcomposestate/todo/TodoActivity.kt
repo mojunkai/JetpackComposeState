@@ -1,7 +1,6 @@
-package com.example.jetcomposestate.todo.one
+package com.example.jetcomposestate.todo
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -9,7 +8,8 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import com.example.jetcomposestate.todo.TodoItem
+import com.example.jetcomposestate.todo.one.TodoViewModle
+import com.example.jetcomposestate.todo.three.TodoScreen
 import com.example.jetcomposestate.ui.theme.JetComposeStateTheme
 
 class TodoActivity : ComponentActivity() {
@@ -20,16 +20,13 @@ class TodoActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetComposeStateTheme {
-//                TodoActivityScreen()
-                TodoItemInput{item ->
-                    Log.d("TodoActivity", "onCreate: $item")
-
-                }
+                TodoActivityScreen()
             }
         }
     }
+
     @Composable
-    fun TodoActivityScreen() {
+    private fun TodoActivityScreen() {
 //        val items = listOf(
 //            TodoItem("Learn compose", TodoIcon.Event),
 //            TodoItem("Build an app", TodoIcon.Done),
@@ -39,14 +36,11 @@ class TodoActivity : ComponentActivity() {
 //        )
 //        TodoScreen(items)
 
-        val items : List<TodoItem> by todoViewModle.todoItems.observeAsState(listOf())
+        val items: List<TodoItem> by todoViewModle.todoItems.observeAsState(listOf())
 
         TodoScreen(
-           items = items,
+            items = items,
             onAddItem = { todoViewModle.addItem(it) },
             onRemoveItem = { todoViewModle.removeItem(it) })
     }
 }
-
-
-

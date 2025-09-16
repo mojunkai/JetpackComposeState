@@ -15,7 +15,7 @@
             android:name=".examples.HelloComposeStratActivity"
             android:exported="false" />
         <activity
-            android:name=".todo.one.TodoActivity"
+            android:name=".todo.TodoActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.JetComposeState">
